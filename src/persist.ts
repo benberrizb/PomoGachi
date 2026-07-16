@@ -1,9 +1,15 @@
 import { Store } from "@tauri-apps/plugin-store";
-import type { PersistedState, SplitMode } from "./types";
+import type { PersistedState, SplitMode, ThemeId } from "./types";
 import { DEFAULT_SESSION, DEFAULT_SETTINGS } from "./types";
 
 const STORE_FILE = "pomodoro-bot.json";
 const STORE_KEY = "state";
+
+const THEME_IDS: ThemeId[] = ["oled", "gameboy", "tamagotchi", "ocean"];
+
+function normalizeTheme(raw: unknown): ThemeId {
+  return THEME_IDS.includes(raw as ThemeId) ? (raw as ThemeId) : DEFAULT_SETTINGS.theme;
+}
 
 let storePromise: Promise<Store> | null = null;
 
@@ -46,7 +52,7 @@ export async function loadPersisted(): Promise<PersistedState> {
           typeof rawSettings.lastStudyMinutes === "number"
             ? rawSettings.lastStudyMinutes
             : DEFAULT_SETTINGS.lastStudyMinutes,
-        theme: (rawSettings.theme as PersistedState["settings"]["theme"]) ?? DEFAULT_SETTINGS.theme,
+        theme: normalizeTheme(rawSettings.theme),
         positionLocked: Boolean(rawSettings.positionLocked),
         position:
           (rawSettings.position as PersistedState["settings"]["position"]) ?? null,

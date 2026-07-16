@@ -6,4 +6,4 @@ src-tauri/gen
 .DS_Store
 .vscode
 .idea
-*.log
+release-artifacts

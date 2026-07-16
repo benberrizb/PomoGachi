@@ -78,6 +78,25 @@ export const THEMES: Record<ThemeId, ThemeTokens> = {
     shadow: "0 8px 0 #d07090",
     pixelate: true,
   },
+  ocean: {
+    id: "ocean",
+    label: "Ocean",
+    font: '"IBM Plex Mono", "Cascadia Mono", "Consolas", monospace',
+    bg: "transparent",
+    panel: "#001b44",
+    border: "#4fb0ff",
+    text: "#a8d8ff",
+    muted: "#4a7aad",
+    accent: "#4fb0ff",
+    accentAlt: "#004c8c",
+    exit: "#4fb0ff",
+    petBody: "#4fb0ff",
+    petEye: "#001b44",
+    bezel: "#003366",
+    radius: "6px",
+    shadow: "0 6px 0 #001028",
+    pixelate: true,
+  },
 };
 
 export function applyThemeTokens(theme: ThemeTokens): void {

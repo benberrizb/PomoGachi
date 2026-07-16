@@ -1,4 +1,4 @@
-export type ThemeId = "oled" | "gameboy" | "tamagotchi";
+export type ThemeId = "oled" | "gameboy" | "tamagotchi" | "ocean";
 
 export type Phase = "focus" | "break";
 

@@ -270,6 +270,116 @@ body {
   cursor: default;
   z-index: 5;
   border-radius: inherit;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+
+.settings-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.settings-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.settings-panel::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border: 1px solid var(--border);
+}
+
+.settings-panel::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+/* Game Boy — chunky pixel scroll */
+html[data-theme="gameboy"] .settings-panel {
+  scrollbar-width: auto;
+  scrollbar-color: #0f380f #8bac0f;
+}
+
+html[data-theme="gameboy"] .settings-panel::-webkit-scrollbar {
+  width: 10px;
+}
+
+html[data-theme="gameboy"] .settings-panel::-webkit-scrollbar-track {
+  background: #8bac0f;
+  border-left: 2px solid #0f380f;
+}
+
+html[data-theme="gameboy"] .settings-panel::-webkit-scrollbar-thumb {
+  background: #0f380f;
+  border: 2px solid #306230;
+  border-radius: 0;
+  image-rendering: pixelated;
+}
+
+html[data-theme="gameboy"] .settings-panel::-webkit-scrollbar-thumb:hover {
+  background: #306230;
+}
+
+html[data-theme="gameboy"] .settings-panel::-webkit-scrollbar-corner {
+  background: #8bac0f;
+}
+
+/* Tamagotchi — soft rounded pink/green scroll */
+html[data-theme="tamagotchi"] .settings-panel {
+  scrollbar-width: thin;
+  scrollbar-color: #e85a7a #c8e6c0;
+}
+
+html[data-theme="tamagotchi"] .settings-panel::-webkit-scrollbar {
+  width: 9px;
+}
+
+html[data-theme="tamagotchi"] .settings-panel::-webkit-scrollbar-track {
+  background: #b8dcb0;
+  border-radius: 8px;
+  margin: 4px 0;
+}
+
+html[data-theme="tamagotchi"] .settings-panel::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f0a0b8, #e85a7a);
+  border: 1px solid #d07090;
+  border-radius: 8px;
+}
+
+html[data-theme="tamagotchi"] .settings-panel::-webkit-scrollbar-thumb:hover {
+  background: #e85a7a;
+}
+
+html[data-theme="tamagotchi"] .settings-panel::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Ocean — deep blue scroll */
+html[data-theme="ocean"] .settings-panel {
+  scrollbar-width: thin;
+  scrollbar-color: #4fb0ff #001b44;
+}
+
+html[data-theme="ocean"] .settings-panel::-webkit-scrollbar {
+  width: 9px;
+}
+
+html[data-theme="ocean"] .settings-panel::-webkit-scrollbar-track {
+  background: #001028;
+  border-left: 1px solid #004c8c;
+}
+
+html[data-theme="ocean"] .settings-panel::-webkit-scrollbar-thumb {
+  background: #4fb0ff;
+  border: 1px solid #004c8c;
+  border-radius: 2px;
+}
+
+html[data-theme="ocean"] .settings-panel::-webkit-scrollbar-thumb:hover {
+  background: #a8d8ff;
+}
+
+html[data-theme="ocean"] .settings-panel::-webkit-scrollbar-corner {
+  background: #001028;
 }
 
 .settings-header {
@@ -362,6 +472,34 @@ html[data-theme="oled"] .btn,
 html[data-theme="oled"] .screen,
 html[data-theme="oled"] .bezel {
   border-radius: 0;
+}
+
+html[data-theme="ocean"] .bezel {
+  padding: 8px;
+  background:
+    linear-gradient(180deg, #004c8c 0%, #003366 40%, #001b44 100%);
+}
+
+html[data-theme="ocean"] .screen {
+  background-color: #001b44;
+  background-image:
+    linear-gradient(180deg, rgba(0, 27, 68, 0.55) 0%, rgba(0, 27, 68, 0.82) 55%, rgba(0, 16, 40, 0.92) 100%),
+    url("./assets/ocean-bg.png");
+  background-size: cover;
+  background-position: center top;
+  image-rendering: pixelated;
+  border-color: #4fb0ff;
+}
+
+html[data-theme="ocean"] .btn:hover,
+html[data-theme="ocean"] .theme-pick.active,
+html[data-theme="ocean"] .theme-pick:hover,
+html[data-theme="ocean"] .btn.active {
+  color: #001b44;
+}
+
+html[data-theme="ocean"] .time {
+  text-shadow: 0 0 8px rgba(79, 176, 255, 0.35);
 }
 
 /* —— Launch / duration —— */

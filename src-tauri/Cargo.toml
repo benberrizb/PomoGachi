@@ -1,6 +1,6 @@
 [package]
 name = "pomogachi"
-version = "0.1.0"
+version = "1.1.0"
 description = "PomoGachi — always-on-top pomodoro overlay"
 authors = ["you"]
 edition = "2021"
