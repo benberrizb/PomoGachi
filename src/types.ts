@@ -54,7 +54,7 @@ export const DEFAULT_SESSION: SessionSnapshot = {
 };
 
 export const DEFAULT_SETTINGS: AppSettings = {
-  theme: "oled",
+  theme: "tamagotchi",
   positionLocked: false,
   position: null,
   splitMode: "25/5",
